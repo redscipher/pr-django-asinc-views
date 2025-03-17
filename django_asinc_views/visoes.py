@@ -17,6 +17,8 @@ def api(requisicao):
     #retorno
     return JsonResponse(conteudo)
 
+#region sincronos
+#
 def chamada_http_sinc():
     #loop
     for i in range(1,6):
@@ -32,7 +34,11 @@ def visao_sinc(requisicao):
     chamada_http_sinc()
     #retorno
     return HttpResponse('Chamada HTTP bloqueante!')
+#
+#endregion
 
+#region assincronos
+#
 #assincronos
 async def chamada_http_asinc():
     #loop
@@ -53,3 +59,5 @@ async def visao_asinc(requisicao):
     loop.create_task(chamada_http_asinc())
     #retorno
     return HttpResponse('Chamada HTTP nao-bloqueante!')
+#
+#endregion

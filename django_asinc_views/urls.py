@@ -21,6 +21,6 @@ from . import visoes
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', visoes.visao_asinc, name='api'),
-    path('api/sinc/', visoes.visao_sinc, name='api/sinc')
+    path('api/', visoes.visao_asinc, name='api'),       #chamada a api assincrono
+    path('api/sinc/', visoes.visao_sinc, name='api/sinc')       #chamada a api sincrona
 ]
